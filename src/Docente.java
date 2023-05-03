@@ -1,15 +1,15 @@
-public class Docentes extends Persona{
+public class Docente extends Persona{
 
 //    Atributo
     private String titulacion;
     private double puntos;
 
 //    Constructores
-    public Docentes() {
+    public Docente() {
         super();
     }
 
-    public Docentes(String nombre, String primerApellido, String segundoApellido, String titulacion, double puntos) {
+    public Docente(String nombre, String primerApellido, String segundoApellido, String titulacion, double puntos) {
         super(nombre, primerApellido, segundoApellido);
         this.setTitulacion(titulacion);
         this.setPuntos(puntos);
