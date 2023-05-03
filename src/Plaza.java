@@ -56,34 +56,12 @@ public class Plaza {
 //    Método toString()
 @Override
 public String toString() {
-    String texto =
-            "------------------------------------\n"
-                    + "ID Plaza "+this.getId()+"\n"
-                    + "Tipo: "+this.getTipo()+"\n";
-    if (this.isAdjudicada()) {
-        texto=texto+
-                "Adjudicada: ADJUDICADA\n"
-                + "ID: "+this.getPersona().getId()+"\n"
-                + "Nombre: "+this.getPersona().getNombre()+"\n"
-                + "Apellido1: "+this.getPersona().getPrimerApellido()+"\n"
-                + "Apellido2: "+this.getPersona().getSegundoApellido()+"\n"
-        ;
-        if (this.getTipo()=='D') {
-            texto=texto
-                    +"Titulacion: "+((Docente)this.getPersona()).getTitulacion()+"\n"
-                    + "Puntos: "+((Docente)this.getPersona()).getPuntos()+"\n"
-            ;
-        }else {
-            texto=texto
-                    +"Especialidad: "+((Sanitario)this.getPersona()).getEspecialidad()+"\n"
-                    + "Dias: "+((Sanitario)this.getPersona()).getDias()+"\n"
-            ;
-        }
-    }else {
-        texto=texto+
-                "Adjudicada: NO ADJUDICADA\n";
-    }
-
-    return texto;
+    return  "ID Plaza: " + this.getId()
+            + "\nTipo de plaza: " + this.getTipo()
+            + "\nAdjudicada: " + (this.isAdjudicada() ? "ADJUDICADA\n"
+            + "Persona adjudicada:\n" + this.getPersona() : "NO ADJUDICADA")
+            + "\n------------------------------------\n";
 }
+
+
 }
